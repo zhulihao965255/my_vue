@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app">
+        <!-- 一定要有value,这样才有意义，且选了一个时就只选一个 -->
+        <input type="checkbox" v-model="checkeds">   
+        <input type="checkbox" v-model="checkeds">
+        <input type="checkbox" v-model="checkeds">
+        <input type="checkbox" v-model="checkeds"> 
+        <p>{{checkeds}}</p>
+    </div>
+
+    <script src="./vue.js"></script>
+    <script>
+        new Vue({
+            el:"#app",
+            data:{
+                checkeds:[]
+            }
+        })
+
+        console.log(typeof "zhu");//string
+    </script>
+</body>
+
+</html>

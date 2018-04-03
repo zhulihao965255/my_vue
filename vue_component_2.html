@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app">
+        <simple-cpt></simple-cpt>
+        <simple-cpt></simple-cpt>
+        <simple-cpt></simple-cpt>  
+        <child message="hello Component"></child>
+        <input type="text" v-model="write">
+        <props-comp :message2="write"></props-comp>     
+    </div>
+    <script src="./vue.js"></script>
+    <script>
+        //组件设计初衷就是要配合使用的，最常见的就是形成父子组件的关系
+        //父子组件的关系可以总结为 prop 向下传递，事件向上传递
+        // let data={
+        //     counter:0
+        // }
+        Vue.component('simple-cpt', {
+            template: '<button v-on:click="counter+=1">{{counter}}</button>',
+            data: function () { 
+                return {
+                    counter:0
+                };
+            }   
+        });
+
+        Vue.component('child',{
+            template:'<div>{{message}}</div>',
+            props:['message']
+        });
+
+        Vue.component('props-comp',{
+            template:'<span>{{message2}}</span>',
+            props:['message2']  //监听write的数据并显示在该组件中。
+        })
+
+        new Vue({
+             el: '#app',
+             data:{
+                 write:''
+             }
+         })
+    </script>
+</body>
+
+</html>

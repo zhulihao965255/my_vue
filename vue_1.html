@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <span v-text="test1"></span>
+        <br/>
+        <span v-if="ow">哈哈哈哈哈</span>
+        <span v-else>hrgioeriughruigh</span>
+
+        <span v-if="num >= 5">打打打</span>
+        <span v-else-if="num > 0">下</span>
+        <span v-else>得分</span>
+
+        <span v-show="isshow">是否显示:{{isshow}}</span>
+
+         <ul>
+             <li v-for="item of  obj">{{item}}</li>
+         </ul>
+
+         <div>
+             <p v-for="(item,index) in arr">{{item}}--{{index}} </p>
+             </div>
+    </div>     
+     
+    <script src="./vue.js"></script>
+    <script>
+        //   v-if 与 v-show(频繁切换)   类和对象       v-text  能够解决闪屏问题
+        const vs=new Vue({
+            el:'#app',
+            data:{
+                test1:'test',
+                ow:true,
+                obj:{
+                    name:'zs',
+                    age:18,
+                    school:'nefu'
+                },
+                arr:[
+                    'haerbin',
+                    'jilin',
+                    'beijing',
+                    'shangahi',
+                    4
+                ],
+                num:5,
+                isshow:true
+            }
+        });
+    </script>
+
+
+</body>
+</html>
