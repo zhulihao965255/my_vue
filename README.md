@@ -9,3 +9,10 @@
 &&&1:checkbox 必须要设置不同的value,不然会选择一个时候会选择全部的。
 
 &&&2:删除商品的时候注意index的变化。
+
+#### vue-cli  脚手架，帮助快速创建项目。
+$$$ npm install -g vue-cli(安装vue-cli脚手架) vue init webpack(初始化基于webpack构建工具的项目) npm run dev(在服务器上运行)
+
+vue-router(路由，组件与路径的配合，构键单页面应用必备)
+
+vuex(状态管理 即vue的全局数据管理)

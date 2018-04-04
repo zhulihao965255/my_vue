@@ -1,38 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
 </head>
+
 <body>
     <div id="app">
         <get-data :datas="stu"></get-data>
     </div>
     <script src="./vue.js"></script>
     <script>
-        Vue.component('getData',{
-            template:`<div>
+        // Vue.component('getData', {
+        //     template: `<div>
+        //                 <h2>{{datas}}</h2>
+        //               </div>`,
+        //     props: ['datas'],
+        //     computed:{
+        //         so(){
+        //             // return datas.sort();
+        //             return "za"+datas.toString();
+        //         }
+
+        //     }
+        // })
+        new Vue({
+            el: '#app',
+            data: {
+                stu: [
+                    3, 'rt', 9, 0
+                ]
+            },
+            components: {
+                'getData': {
+                    template: `<div>
                         <h2>{{datas}}</h2>
                       </div>`,
-            props:['datas'],
-            // computed:{
-            //     so(){
-            //         // return datas.sort();
-            //         return "za"+datas.toString();
-            //     }
-                
-            // }
-        })
-        new Vue({
-            el:'#app',
-            data:{
-                stu:[
-                    3,'rt',9,0
-                ]
-            }
+                    props: ['datas'],
+                }
+            },
         })
     </script>
 </body>
+
 </html>
