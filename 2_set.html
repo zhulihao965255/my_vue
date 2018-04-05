@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <button @click="change">点击</button>
+        <ul>
+            <li v-for="item in arr">{{item}}</li>
+        </ul>
+        <p v-for="item in obj">{{item}}</p>
+    </div>
+    <script src="./vue.js"></script>
+    <script>
+        new Vue({
+            el:'#app',
+            data:{
+                arr:['a','b','c','d'],
+                obj:{
+                    name:'heb'
+                }
+            },
+            methods: {
+                change(){                 
+                    // this.arr[this.arr.length-1]='0';//无效
+                    // this.obj.age=68;//无效
+
+                    // Object.assign(this.obj,{age:68});//无效
+
+                    Vue.set(this.arr,5,'ff');
+                    Vue.set(this.obj,'age',69);
+                    Vue.set(this.obj,'age',69);
+                }
+            }
+        });
+    </script>
+</body>
+</html>

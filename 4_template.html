@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app">
+        <template v-if="isShow">
+            <h1>AAA</h1>
+            <h1>BBB</h1>
+            <h1>CCC</h1>
+            <h1>DDD</h1>
+        </template>
+    </div>
+    <script src="./vue.js"></script>
+    <script>
+        //  生命周期函数  钩子函数
+        const v=new Vue({
+            el: '#app',
+            data: {
+                isShow: false
+            },
+        });
+    </script>
+</body>
+
+</html>

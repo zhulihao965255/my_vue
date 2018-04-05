@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app">
+        <!--  .native能使组件调用实力的方法   -->
+        <zhu @click.native="add"></zhu>
+        <h1>{{ num }}</h1>
+    </div>
+    <!-- <zlh msg="全局组件"></zlh>    在这里没有用，但也不报错 -->
+    <script src="./vue.js"></script>
+    <script>
+        //全局组件
+        Vue.component('zlh',{
+            template:`
+                <div>
+                    <p>一个全局组件</p>
+                    <h2>{{ msg }}</h2>
+                </div>
+            `,
+            props:['msg']
+        });
+        Vue.component('zhu',{
+            template: `
+                <zlh msg="这是子组件"></zlh>
+                <h3>父组件</h3>
+            `
+        })
+        const v=new Vue({
+            el: '#app',
+            data: {
+              num:0
+            },
+            methods: {
+                add(){
+                    this.num++;
+                }
+            }
+        });
+    </script>
+</body>
+
+</html>

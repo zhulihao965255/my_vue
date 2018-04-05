@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app">
+        <zlh msg="全局组件"></zlh>
+        <zlh2 v-bind:name="name"></zlh2>
+    </div>
+    <!-- <zlh msg="全局组件"></zlh>    在这里没有用，但也不报错 -->
+    <script src="./vue.js"></script>
+    <script>
+        //全局组件
+        Vue.component('zlh',{
+            template:`
+                <div>
+                    <p>一个全局组件</p>
+                    <h2>{{ msg }}</h2>
+                </div>
+            `,
+            props:['msg']
+        })
+        const v=new Vue({
+            el: '#app',
+            data: {
+               name:'daxu'
+            },
+            components: {
+                zlh2:{
+                    template:
+                    `
+                        <ul>
+                            <li>{{ name }}</li>
+                        </ul>
+                    `,
+                    props:['name']
+                }
+            }
+        });
+    </script>
+</body>
+
+</html>

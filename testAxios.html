@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        ul{
+            list-style-type: none
+        }
+    </style>
+</head>
+<body>
+    <ul></ul>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script>
+        window.API_PROXY='https://bird.ioliu.cn/v2/?url=';
+        axios.get(API_PROXY+`http://m.maoyan.com/movie/list.json?type=hot
+            &offset=2&limit=10`).then(function(res){
+                console.log(res);
+                let oUl=document.getElementsByTagName('ul')[0]; 
+                let data=res.data.data.movies;
+                for(let movie of data){
+                    oUl.innerHTML+=`<li><img src=${movie.img}></img>
+                    <p>${movie.nm}</p></li>`
+                }
+        });
+    </script>
+</body>
+</html>

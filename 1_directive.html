@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <div v-abcd="red">自定义的一个指令</div>
+    </div>
+    <script src="./vue.js"></script>
+    <script>
+        Vue.directive('abcd',function(el,binding,vnode){
+            console.log(el);//<div style="background-color: green;">自定义的一个指令</div>
+            console.log(binding);
+            console.log(vnode);
+            el.style.backgroundColor=binding.value;
+        });
+
+        // Vue.directive('mydir',{
+        //         bind(el,binding,vnode){
+        //             console.log('bind');
+        //         },
+        //         inserted(){
+        //             console.log('inserted');
+        //         },
+        //         updated () {
+        //             console.log('updated');
+        //         },
+        //         componentUpdated(){
+        //             console.log('componentUpdated');
+        //         },
+        //         unbind(){
+        //             console.log('unbind');
+        //         }
+        // });
+        new Vue({
+            el:'#app',
+            data:{
+                red:'green'
+            }
+        });
+    </script>
+</body>
+</html>

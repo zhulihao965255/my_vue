@@ -16,3 +16,27 @@ $$$ npm install -g vue-cli(安装vue-cli脚手架) vue init webpack(初始化基
 vue-router(路由，组件与路径的配合，构键单页面应用必备)
 
 vuex(状态管理 即vue的全局数据管理)
+
+复习一下vue  ,顺便复习一下基础知识
+
+父组件与子组件是单向数据流动的，即只能父向子
+
+ 自定义指令  set   生命周期钩子函数 组件   父子组件嵌套(.native调用实例的方法 is切换组键) slot与name的对应 等等。
+
+ 复习一下axios，vue跨域请求资源使用axios，还有一个比较好的工具
+ ```
+    一个get请求的小例子:
+    window.API_PROXY='https://bird.ioliu.cn/v2/?url=';
+        axios.get(API_PROXY+`http://m.maoyan.com/movie/list.json?type=hot
+            &offset=2&limit=10`).then(function(res){
+                console.log(res);
+                let oUl=document.getElementsByTagName('ul')[0]; 
+                let data=res.data.data.movies;
+                for(let movie of data){
+                    oUl.innerHTML+=`<li><img src=${movie.img}></img>
+                    <p>${movie.nm}</p></li>`
+                }
+        });
+ ```
+
+
