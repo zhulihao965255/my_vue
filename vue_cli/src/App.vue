@@ -1,9 +1,12 @@
 <template>
   <div id="app">
     <img src="./assets/logo.png">
-    <router-link to="/">主页</router-link>
-    <router-link to="/test">去Test</router-link>
-    <router-link :to="{name:'test1',params:{city:'heb',sco:'nefu'}}">去Test1</router-link>
+    <div>
+        <router-link to="/">首页</router-link>
+        <router-link to="/test">Test</router-link>
+        <router-link :to="{name:'test1',params:{city:'beijing',sum:0}}">Test1</router-link>
+        <router-link to="/test/test2">Test2</router-link>
+    </div>
     <router-view/>
   </div>
 </template>

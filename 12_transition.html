@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .fade-enter-active,
+        .fade-leave-active {
+            transition: opacity .5s;
+        }
+
+        .fade-enter,
+        .fade-leave-to
+        /* .fade-leave-active below version 2.1.8 */
+
+            {
+            opacity: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="div">
+        <button @click="show=!show">隐藏/显示</button>
+        <transition name="fade">
+            <p v-if="show">哈</p>
+        </transition>
+    </div>
+    <script src="./vue.js"></script>
+    <script>
+        new Vue({
+            el: '#div',
+            data: {
+                show: true
+            }
+        })
+    </script>
+
+</body>
+
+</html>

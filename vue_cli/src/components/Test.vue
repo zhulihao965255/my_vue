@@ -1,24 +1,23 @@
 <template>
-    <div>
-        <h1 class="hw">{{ msg }}</h1>
-        <p>HAHA</p>
-        <router-view/>
-    </div>
+  <div>
+      <h1 class="hw">hello warld</h1>
+      <h1>{{ msg }}</h1>
+      <router-view/>
+  </div>
 </template>
-
 <script>
 export default {
-  name: 'Test',
   data () {
-    return {
-      msg: '学习学习再学习'
-    }
+      return {
+          msg:'测试组件 主路由'
+      }
   }
 }
 </script>
-
 <style scoped>
     .hw{
-        color: blue
+        background-color: #ff00ff
     }
 </style>
+
+

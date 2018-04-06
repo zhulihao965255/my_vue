@@ -1,26 +1,18 @@
 <template>
   <div>
-      <h1>{{ msg2 }}</h1>
-      <ul>
-          <li>我的城市:{{ $route.params.city }}</li>
-          <li>我的大学:{{ $route.params.sco }}</li>
-      </ul>
+      <h1>这是子路由1</h1>
+      <h2>城市: {{ $route.params.city }}</h2>
+      <h3>总数:{{ $route.params.sum }}</h3>
   </div>
 </template>
 <script>
 export default {
-   name:'Test1',
-   data () {
-       return {
-           msg2:'stu Rooter'
-       }
-   }
+  
 }
 </script>
 <style scoped>
-    ul li{
-        list-style-type: none;
-    }
+
 </style>
+
 
 

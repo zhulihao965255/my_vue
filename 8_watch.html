@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app">
+        <h1>
+            {{ str.split('').reverse() }}
+        </h1>
+        <p> {{ allname }} </p>
+        <h5>{{fullName }}</h5>
+    </div>
+    <script src="./vue.js"></script>
+    <script>
+        const v = new Vue({
+            el: '#app',
+            data: {
+                str: 'dongbeilinyedaxue',
+                head: 'hrb',
+                footer: 'nefu',
+                firstName: 'Foo',
+                lastName: 'Bar',
+                fullName: 'Foo Bar'
+            },
+            watch: {
+                //改变fullName时这两个值也会改变
+                    firstName: function (val) {
+                        this.fullName = val + ' ' + this.lastName
+                    },
+                    lastName: function (val) {
+                        this.fullName = this.firstName + ' ' + val
+                    }
+          
+            },
+            computed: {
+                allname() {
+                    return this.head + this.footer;
+                }
+            }
+        });
+        /*
+                Vue 通过 watch 选项提供了一个更通用的方法，来响应数据的变化。
+                当需要在数据变化时执行异步或开销较大的操作时，这个方式是最有用的
+
+                任何复杂逻辑，你都应当使用计算属性。
+        */
+    </script>
+</body>
+
+</html>

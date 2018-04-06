@@ -27,7 +27,7 @@ vuex(状态管理 即vue的全局数据管理)
  ```
     一个get请求的小例子:
     window.API_PROXY='https://bird.ioliu.cn/v2/?url=';
-        axios.get(API_PROXY+`http://m.maoyan.com/movie/list.json?type=hot
+    axios.get(API_PROXY+`http://m.maoyan.com/movie/list.json?type=hot
             &offset=2&limit=10`).then(function(res){
                 console.log(res);
                 let oUl=document.getElementsByTagName('ul')[0]; 
@@ -36,7 +36,14 @@ vuex(状态管理 即vue的全局数据管理)
                     oUl.innerHTML+=`<li><img src=${movie.img}></img>
                     <p>${movie.nm}</p></li>`
                 }
-        });
+        });    
  ```
+ Object.defineProperty方法是vue成为响应式系统的根本。它的双向数据绑定原理就是基于它，[defineProperty](https://github.com/zhulihao965255/my_vue/9_defineProperty.html)
+
+ 做了几个小例子.[轮番图](https://github.com/zhulihao965255/my_vue/11_imagecg.html)
+ [弹出层组件](https://github.com/zhulihao965255/my_vue/7_dialog.html)
+
+
+ [我的个人网站](http://www.zhulihao.cn)
 
 
