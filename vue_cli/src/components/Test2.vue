@@ -3,7 +3,11 @@
 </template>
 <script>
 export default {
-  
+  beforeRouteEnter(to, from, next){
+    console.log(to);
+    console.log(from);
+    next();
+  }
 }
 </script>
 <style scoped>

@@ -24,6 +24,7 @@ vuex(状态管理 即vue的全局数据管理)
  自定义指令  set   生命周期钩子函数 组件   父子组件嵌套(.native调用实例的方法 is切换组键) slot与name的对应 等等。
 
  复习一下axios，vue跨域请求资源使用axios，还有一个比较好的工具
+ [小例子](https://github.com/zhulihao965255/my_vue/blob/master/testAxios.html)
  ```
     一个get请求的小例子:
     window.API_PROXY='https://bird.ioliu.cn/v2/?url=';
@@ -38,10 +39,18 @@ vuex(状态管理 即vue的全局数据管理)
                 }
         });    
  ```
- Object.defineProperty方法是vue成为响应式系统的根本。它的双向数据绑定原理就是基于它，[defineProperty](https://github.com/zhulihao965255/my_vue/9_defineProperty.html)
+ Object.defineProperty方法是vue成为响应式系统的根本。它的双向数据绑定原理就是基于它，[defineProperty](https://github.com/zhulihao965255/my_vue/blob/master/9_defineProperty.html)
 
- 做了几个小例子.[轮番图](https://github.com/zhulihao965255/my_vue/11_imagecg.html)
- [弹出层组件](https://github.com/zhulihao965255/my_vue/7_dialog.html)
+ 做了几个小例子.[轮番图](https://github.com/zhulihao965255/my_vue/blob/master/11_imagecg.html)
+ [弹出层组件](https://github.com/zhulihao965255/my_vue/blob/master/7_dialog.html)
+
+ 利用vuecli构建了项目，进入vue_cli目录，更加的详细。关于url传参，vue-router的使用
+ 组件化的一些细节，例如传参，重定向，别名，父子路由的调转，传参，还有一些过渡状态。
+ 具体详细看[官网](https://vuejs.org/)
+ 
+
+ vuex：状态管理模块  一个响应式插件 四大模块 主要在中大型项目中使用.有详细叙述。
+ state mutations getters actions 多做例子   改变时明式提交修改，提交的是mutation的方法
 
 
  [我的个人网站](http://www.zhulihao.cn)
